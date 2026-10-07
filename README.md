@@ -119,7 +119,7 @@ src/
 ## Before launch
 
 - [x] Legal entity: *Big Duck Networks*, owned by Webcap Media Group (`company`, `parentCompany`).
-- [ ] Replace the placeholder `email` and `url`.
+- [x] Domain `pingduck.app`, support `support@pingduck.app`.
 - [ ] Have counsel review `/privacy` and `/terms`.
 - [ ] Update the Privacy Policy **before** accounts, cloud sync, the Homelab Agent, or subscriptions ship. It currently describes a fully local app.
 - [ ] Add store URLs once the listings are live.

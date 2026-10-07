@@ -1,5 +1,5 @@
 // Single source for names, contacts and links used across the site and the
-// legal pages. Confirm the legal entity, email and jurisdiction before launch.
+// legal pages.
 export const site = {
   name: "PingDuck",
   tagline: "See every device on your network.",
