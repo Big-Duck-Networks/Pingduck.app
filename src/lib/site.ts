@@ -7,6 +7,7 @@ export const site = {
     "PingDuck finds every device on your Wi-Fi in seconds: names, vendors, latency and open ports. Everything stays on your phone.",
   url: "https://pingduck.app",
   company: "Big Duck Networks",
+  parentCompany: "Webcap Media Group",
   email: "support@pingduck.app",
   jurisdiction: "the State of New York",
   // Store listings; null shows a "coming soon" badge instead of a link.

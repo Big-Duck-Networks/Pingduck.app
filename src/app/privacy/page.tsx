@@ -25,7 +25,7 @@ export default function PrivacyPage() {
 
         <p>
           This policy explains how the PingDuck mobile app for iOS and Android (the
-          &ldquo;App&rdquo;), provided by {site.company} (&ldquo;we&rdquo;, &ldquo;us&rdquo;),
+          &ldquo;App&rdquo;), provided by {site.company}, a {site.parentCompany} company (&ldquo;we&rdquo;, &ldquo;us&rdquo;),
           handles information. It also covers this website.
         </p>
 

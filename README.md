@@ -61,7 +61,7 @@ Names, contacts and links used across the site live in **`src/lib/site.ts`**:
 
 | Key                            | Used for                                                     |
 | ------------------------------ | ------------------------------------------------------------ |
-| `company`                      | Legal entity on the privacy page, terms, and footer          |
+| `company` / `parentCompany`    | Legal entity (and owner) on the privacy page, terms, footer  |
 | `email`                        | Support and legal contact                                    |
 | `url`                          | Canonical URL and Open Graph metadata                        |
 | `jurisdiction`                 | Governing law in the terms                                   |
@@ -118,7 +118,7 @@ src/
 
 ## Before launch
 
-- [ ] Confirm the legal entity (`company`). The app shows *Big Duck Networks*; the PRD lists Webcap Media Group.
+- [x] Legal entity: *Big Duck Networks*, owned by Webcap Media Group (`company`, `parentCompany`).
 - [ ] Replace the placeholder `email` and `url`.
 - [ ] Have counsel review `/privacy` and `/terms`.
 - [ ] Update the Privacy Policy **before** accounts, cloud sync, the Homelab Agent, or subscriptions ship. It currently describes a fully local app.

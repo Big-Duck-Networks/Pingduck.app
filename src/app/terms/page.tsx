@@ -17,7 +17,7 @@ export default function TermsPage() {
       <article className="prose-legal mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <p>
           These Terms of Use (&ldquo;Terms&rdquo;) are an agreement between you and{" "}
-          {site.company} (&ldquo;we&rdquo;, &ldquo;us&rdquo;) and govern your use of the PingDuck
+          {site.company}, a {site.parentCompany} company (&ldquo;we&rdquo;, &ldquo;us&rdquo;), and govern your use of the PingDuck
           mobile app (the &ldquo;App&rdquo;) and any related services. By downloading or using
           the App you agree to these Terms. If you do not agree, do not use the App.
         </p>
