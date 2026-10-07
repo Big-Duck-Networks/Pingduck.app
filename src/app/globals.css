@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* "Precision Editorial Recon", matching the app: white canvas, carbon ink,
+   hairline rules, telemetry accents reserved for status. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: #ffffff;
+  --color-surface-1: #f8f9fa;
+  --color-surface-2: #f1f3f5;
+  --color-hairline: #e2e5e8;
+  --color-partition: #cbd2d9;
+  --color-ink: #111827;
+  --color-ink-2: #475569;
+  --color-ink-muted: #94a3b8;
+  --color-live: #059669;
+  --color-live-fill: #ecfdf5;
+  --color-live-border: #a7f3d0;
+  --color-pending: #d97706;
+  --color-critical: #dc2626;
+  --color-route: #2563eb;
+  --color-route-fill: #eff6ff;
+  --color-route-border: #bfdbfe;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+/* The app's hard-offset button shadow. */
+.shadow-hard {
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+/* Long-form legal and FAQ copy. */
+.prose-legal h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-hairline);
+}
+.prose-legal h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legal p,
+.prose-legal ul {
+  color: var(--color-ink-2);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.prose-legal ul {
+  list-style: square;
+  padding-left: 1.25rem;
+}
+.prose-legal li {
+  margin-bottom: 0.4rem;
+}
+.prose-legal strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.prose-legal a {
+  color: var(--color-route);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-chevron {
+  transform: rotate(45deg);
 }
