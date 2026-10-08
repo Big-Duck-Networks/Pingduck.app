@@ -6,7 +6,8 @@
     "dev": "next dev -p 3014",
     "build": "next build",
     "start": "next start -p 3014",
-    "lint": "eslint"
+    "lint": "eslint",
+    "rebuild": "powershell -ExecutionPolicy Bypass -File ./scripts/rebuild.ps1"
   },
   "dependencies": {
     "next": "16.4.0",

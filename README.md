@@ -46,6 +46,40 @@ npm start          # production server on :3014
 npm run lint
 ```
 
+## Deployment (Hetzner Cloud)
+
+The production site runs as a containerized Next.js 16 service (`pingduck-website:latest`) on Hetzner Cloud, listening on `127.0.0.1:3014` behind a reverse proxy.
+
+### Remote Deployment (From Local Machine)
+
+Execute the 1-click rebuild pipeline directly from your local terminal:
+
+```sh
+npm run rebuild
+# or: .\scripts\rebuild.ps1
+```
+
+> [!NOTE]
+> On first run, the script prompts for your Hetzner server IP and caches it to `scripts/.env.deploy` (git-ignored) for zero-prompt subsequent runs.
+
+### On-Server Lifecycle Management (`restart-hetzner.sh`)
+
+When logged directly into the Hetzner VPS over SSH:
+
+```sh
+cd /var/www/pingduck_website    # or project root
+./scripts/restart-hetzner.sh --pull
+```
+
+**What `restart-hetzner.sh` executes:**
+1. **Source Sync**: `git fetch origin main && git reset --hard origin/main` (when `--pull` is passed).
+2. **BuildKit Build**: Compiles `pingduck-website:latest` with multi-stage caching.
+3. **Port Cleanup**: Terminates stale Docker containers and host processes bound to port `3014`.
+4. **Container Launch**: Spawns `pingduck-website` with `unless-stopped` restart policy and memory limits (`--memory=2g`).
+5. **Cache Maintenance**: Prunes dangling images older than 48 hours and builder cache older than 7 days.
+6. **Health Verification**: Asserts container status is `Up` and reports startup logs.
+
+
 ## Routes
 
 | Route      | Page                                                     | Source                     |
