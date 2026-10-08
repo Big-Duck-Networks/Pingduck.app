@@ -42,7 +42,7 @@ const groups: { title: string; items: { q: string; a: React.ReactNode }[] }[] = 
         a: (
           <p>
             No. PingDuck works without one. If you want an account, open the Account tab and
-            create one with your email and a password. We email you a code once to confirm the
+            create one with your email and a password. We email you a link to confirm the
             address. An account will also be how you connect cloud sync and the Homelab Agent
             when they arrive. Google sign-in, and Sign in with Apple on iPhone, are coming
             soon. Your device list stays on your phone either way.

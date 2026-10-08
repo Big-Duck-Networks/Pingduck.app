@@ -50,7 +50,7 @@ export default function PrivacyPage() {
           <li>
             <strong>Your email address, if you sign in.</strong> An account is optional. If you
             create one, we store your email address to identify your account, to confirm it
-            with a one-time code and to let you reset your password. Your password is stored
+            with a one-time link and to let you reset your password. Your password is stored
             only as a secure hash, so we cannot read it. We do not send marketing email, and we
             never share or sell your address.
           </li>
@@ -82,8 +82,8 @@ export default function PrivacyPage() {
             logs).
           </li>
           <li>
-            <strong>Resend</strong>: delivers account emails such as confirmation and password
-            reset codes (receives your email address and the message).
+            <strong>Resend</strong>: delivers account emails such as confirmation links and
+            password reset codes (receives your email address and the message).
           </li>
         </ul>
         <p>
