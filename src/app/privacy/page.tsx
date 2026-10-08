@@ -82,8 +82,8 @@ export default function PrivacyPage() {
             logs).
           </li>
           <li>
-            <strong>Resend</strong>: delivers account emails such as confirmation links and
-            password reset codes (receives your email address and the message).
+            <strong>Resend</strong>: delivers account emails such as confirmation links,
+            password reset codes and a confirmation when you delete your account (receives your email address and the message).
           </li>
         </ul>
         <p>
