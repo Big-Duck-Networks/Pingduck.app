@@ -121,7 +121,8 @@ src/
 - [x] Legal entity: *Big Duck Networks*, owned by Webcap Media Group (`company`, `parentCompany`).
 - [x] Domain `pingduck.app`, support `support@pingduck.app`.
 - [ ] Have counsel review `/privacy` and `/terms`.
-- [ ] Update the Privacy Policy **before** accounts, cloud sync, the Homelab Agent, or subscriptions ship. It currently describes a fully local app.
+- [x] Privacy Policy covers the anonymous scan-count ID and optional email and password accounts (Supabase, Resend).
+- [ ] Update the Privacy Policy **before** cloud sync, the Homelab Agent, alerts or subscriptions ship.
 - [ ] Add store URLs once the listings are live.
 
 ---

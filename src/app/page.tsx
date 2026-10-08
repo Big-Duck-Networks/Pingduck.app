@@ -29,9 +29,9 @@ const features = [
   },
   {
     eyebrow: "03 · LOCAL FIRST",
-    title: "No account. Nothing leaves your phone.",
-    body: "Your device inventory lives on your phone and nowhere else. There is no sign-up, no analytics and no ads. Clear it any time from the Account tab.",
-    points: ["No sign-in required", "No trackers or analytics", "Vendor database is bundled for offline use"],
+    title: "No sign-up needed. Your devices stay on your phone.",
+    body: "Scanning works the moment you open the app, no sign-up needed. Your device inventory lives on your phone and nowhere else, with no analytics and no ads. Want an account? Create one with your email and a password. Clear your data any time from the Account tab.",
+    points: ["Account optional, email and password", "No trackers or analytics", "Vendor database is bundled for offline use"],
     src: "/screens/account.png",
     alt: "PingDuck Account screen showing all data stored on this device",
   },
@@ -71,7 +71,7 @@ export default function Home() {
               <StoreBadges />
             </div>
             <p className="mt-6 text-sm text-ink-muted">
-              Free to scan. No account. Your data stays on your phone.
+              Free to scan. No sign-up needed. Your device list stays on your phone.
             </p>
           </div>
 

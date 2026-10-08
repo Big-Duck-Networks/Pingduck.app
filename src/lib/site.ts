@@ -4,7 +4,7 @@ export const site = {
   name: "PingDuck",
   tagline: "See every device on your network.",
   description:
-    "PingDuck finds every device on your Wi-Fi in seconds: names, vendors, latency and open ports. Everything stays on your phone.",
+    "PingDuck finds every device on your Wi-Fi in seconds: names, vendors, latency and open ports. Your device list stays on your phone.",
   url: "https://pingduck.app",
   company: "Big Duck Networks",
   parentCompany: "Webcap Media Group",
@@ -13,7 +13,7 @@ export const site = {
   // Store listings; null shows a "coming soon" badge instead of a link.
   appStoreUrl: null as string | null,
   playStoreUrl: null as string | null,
-  legalUpdated: "October 6, 2026",
+  legalUpdated: "October 7, 2026",
   year: 2026,
 };
 

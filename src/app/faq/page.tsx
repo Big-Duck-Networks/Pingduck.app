@@ -27,10 +27,25 @@ const groups: { title: string; items: { q: string; a: React.ReactNode }[] }[] = 
         q: "Is PingDuck free?",
         a: (
           <p>
-            Yes. Scanning, the radar, the device list and Node Inspect are free, with no account
-            needed. We plan an optional paid plan later for extras that cost us money to run,
+            Yes. Scanning, the radar, the device list and Node Inspect are free, and you
+            don&rsquo;t need an account to use them. The free plan includes 3 scans a day that
+            you start yourself. The automatic scan when you open the app or reconnect to Wi-Fi
+            doesn&rsquo;t count, and runs at most once every 30 minutes. Your scans reset at
+            midnight UTC. We plan an optional paid plan later for unlimited scans and extras that cost us money to run,
             such as the Homelab Agent, cloud sync and intrusion alerts. If we add one, the price
             and terms will be shown clearly in the app before you subscribe.
+          </p>
+        ),
+      },
+      {
+        q: "Do I need an account?",
+        a: (
+          <p>
+            No. PingDuck works without one. If you want an account, open the Account tab and
+            create one with your email and a password. We email you a code once to confirm the
+            address. An account will also be how you connect cloud sync and the Homelab Agent
+            when they arrive. Google sign-in, and Sign in with Apple on iPhone, are coming
+            soon. Your device list stays on your phone either way.
           </p>
         ),
       },
@@ -141,9 +156,11 @@ const groups: { title: string; items: { q: string; a: React.ReactNode }[] }[] = 
         q: "Does PingDuck send my data anywhere?",
         a: (
           <p>
-            No. There is no account, no analytics and no ads, and your device list is stored
-            only on your phone. The app&rsquo;s traffic goes to devices on your own network. See
-            the <Link href="/privacy">Privacy Policy</Link> for details.
+            Your device list, notes and network names stay on your phone. To apply the free
+            plan&rsquo;s scan limit, the app counts scans against a random anonymous ID on our
+            server, with no device or network details attached. If you sign in, we also store
+            your email address. There are no analytics and no ads. See the{" "}
+            <Link href="/privacy">Privacy Policy</Link> for details.
           </p>
         ),
       },
@@ -152,7 +169,9 @@ const groups: { title: string; items: { q: string; a: React.ReactNode }[] }[] = 
         a: (
           <p>
             Open the Account tab and tap <strong>Clear device inventory</strong>. Uninstalling
-            the app also deletes everything it stored.
+            the app also deletes everything it stored on your phone. To delete your account
+            and everything stored with it on our server, tap <strong>Delete account</strong>{" "}
+            on the Account tab.
           </p>
         ),
       },
