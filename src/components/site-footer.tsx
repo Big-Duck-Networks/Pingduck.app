@@ -20,6 +20,7 @@ export function SiteFooter() {
           <Link href="/privacy" className="text-ink-2 hover:text-ink">Privacy Policy</Link>
           <a href={`mailto:${site.email}`} className="text-ink-2 hover:text-ink">Support</a>
           <Link href="/terms" className="text-ink-2 hover:text-ink">Terms of Use</Link>
+          <Link href="/delete-account" className="text-ink-2 hover:text-ink">Delete account</Link>
         </div>
       </div>
       <div className="border-t border-hairline">

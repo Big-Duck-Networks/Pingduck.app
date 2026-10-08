@@ -171,7 +171,8 @@ const groups: { title: string; items: { q: string; a: React.ReactNode }[] }[] = 
             Open the Account tab and tap <strong>Clear device inventory</strong>. Uninstalling
             the app also deletes everything it stored on your phone. To delete your account
             and everything stored with it on our server, tap <strong>Delete account</strong>{" "}
-            on the Account tab.
+            on the Account tab. See <Link href="/delete-account">Delete your account</Link> for
+            what is deleted and what is kept.
           </p>
         ),
       },

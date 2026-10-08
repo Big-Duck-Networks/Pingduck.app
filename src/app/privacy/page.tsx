@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
 import { site } from "@/lib/site";
 
@@ -188,7 +189,9 @@ export default function PrivacyPage() {
             <strong>Your account:</strong> tap <strong>Account › Delete account</strong> in
             the App. This immediately and permanently deletes the account and everything our
             server holds for it, including your email address and scan counts. Signing out does
-            not delete your account. If you no longer have the App, email{" "}
+            not delete your account. Step-by-step instructions are on our{" "}
+            <Link href="/delete-account">Delete your account</Link> page. If you no longer have the
+            App, email{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a> from the address on the account and
             we will delete it within 30 days.
           </li>
