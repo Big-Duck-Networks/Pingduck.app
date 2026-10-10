@@ -13,6 +13,10 @@ export const site = {
   // Store listings; null shows a "coming soon" badge instead of a link.
   appStoreUrl: null as string | null,
   playStoreUrl: null as string | null,
+  // PingDuck Agent for Windows (the tray app's installer, a GitHub Releases
+  // asset); null shows "coming soon" on /agent.
+  agentWindowsUrl: null as string | null,
+  agentImage: "ghcr.io/big-duck-networks/pingduck-agent:latest",
   legalUpdated: "October 7, 2026",
   year: 2026,
 };
