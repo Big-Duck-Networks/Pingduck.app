@@ -64,9 +64,10 @@ export default function AgentPage() {
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <section className="border-2 border-ink bg-canvas p-6 shadow-hard">
           <p className="font-display text-xs font-semibold tracking-[0.2em] text-ink-2">WINDOWS PC</p>
-          <h2 className="font-display mt-2 text-2xl font-bold">{site.name} Agent for Windows</h2>
+          <h2 className="font-display mt-2 text-2xl font-bold">{site.name} for Windows</h2>
           <p className="mt-2 text-ink-2">
-            Sits in the tray and monitors the network your PC is on. Windows 10 or 11, 64-bit.
+            The full {site.name} app on your PC, with the agent built in: it scans your network,
+            sits in the tray and keeps monitoring with the window closed. Windows 10 or 11, 64-bit.
           </p>
           {site.agentWindowsUrl ? (
             <a
@@ -84,12 +85,11 @@ export default function AgentPage() {
             items={[
               <>Download and run the installer.</>,
               <>
-                Sign in with your {site.name} account in the tray app, or leave it waiting and add it
-                from your phone.
+                Sign in with your {site.name} account to get your data in sync.
               </>,
               <>
-                On your phone, open {site.name} and go to <strong>Account › Add monitoring unit</strong>
-                . Your PC shows up under <strong>Find my agent</strong>.
+                Under <strong>Account › This PC</strong>, choose <strong>Monitor this network</strong>.
+                Or add it from your phone: <strong>Account › Add monitoring unit › Find my agent</strong>.
               </>,
             ]}
           />
