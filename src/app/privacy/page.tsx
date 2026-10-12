@@ -186,7 +186,7 @@ export default function PrivacyPage() {
             inventory</strong>, or uninstall the App.
           </li>
           <li>
-            <strong>Your account:</strong> tap <strong>Account › Delete account</strong> in
+            <strong>Your account:</strong> tap <strong>Account › App settings › User settings › Delete account</strong> in
             the App. This immediately and permanently deletes the account and everything our
             server holds for it, including your email address and scan counts. Signing out does
             not delete your account. Step-by-step instructions are on our{" "}

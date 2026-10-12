@@ -27,7 +27,7 @@ export default function DeleteAccountPage() {
             <li>Open {site.name} and go to the <strong>Account</strong> tab.</li>
             <li>Make sure you are signed in to the account you want to delete.</li>
             <li>
-              Tap <strong>Delete account</strong>, then <strong>Delete</strong> to confirm.
+              Tap <strong>App settings</strong>, switch to the <strong>User settings</strong> tab, then tap <strong>Delete account</strong> and <strong>Delete</strong> to confirm.
             </li>
           </ol>
           <p className="!mt-3 !mb-0 !text-ink">
