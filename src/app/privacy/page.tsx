@@ -17,9 +17,11 @@ export default function PrivacyPage() {
       <article className="prose-legal mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <div className="mb-8 border border-live-border bg-live-fill p-5">
           <p className="!mb-0 !text-ink">
-            <strong>The short version:</strong> Everything the app learns about your network
-            stays on your device, and you can delete it at any time. You don&rsquo;t need an
-            account: the app uses a random anonymous ID only to count scans for the free plan.
+            <strong>The short version:</strong> What your phone finds when it scans stays on your
+            phone, and you can delete it at any time. You don&rsquo;t need an account: the app
+            uses a random anonymous ID only to count scans for the free plan. If you set up the
+            optional Homelab Agent on a computer on your network, it reports the devices it finds
+            to your account, so you can see them anywhere and get alerts.
             If you choose to sign in, we also store your email address. If you subscribe, Google
             Play handles the payment and our subscription provider, RevenueCat, records the
             purchase; we never see your card. There are no analytics, no advertising and no
@@ -36,8 +38,8 @@ export default function PrivacyPage() {
         <h2>1. Information we collect</h2>
         <p>
           The App does not include analytics, crash-reporting or advertising SDKs. It never
-          sends your device inventory, network names, notes or scan results to us or to
-          anyone else. The only information that reaches our servers is:
+          sends the device inventory, notes or scan results from your phone&rsquo;s own scans to
+          us or to anyone else. The only information that reaches our servers is:
         </p>
         <ul>
           <li>
@@ -72,6 +74,29 @@ export default function PrivacyPage() {
             receive your payment card details.
           </li>
           <li>
+            <strong>Your monitored network, if you add a monitoring unit.</strong> When you pair a
+            Homelab Agent, the App creates a network on your account with its subnet, gateway IP
+            address and Wi-Fi name (SSID), which also serves as its name.
+          </li>
+          <li>
+            <strong>Your agent.</strong> Its name, software version, when it last checked in, and
+            a hashed copy of the access token it uses (we cannot read the token itself).
+          </li>
+          <li>
+            <strong>Devices the agent finds.</strong> For each device on the monitored network:
+            its MAC address, IP address, hostname, manufacturer, model and advertised services,
+            whether it is online, when it was first and last seen, and whether you have marked it
+            as known. We also record events (a new device joined, a device came online or went
+            offline, an IP address changed). Event history is kept while the account has
+            Premium and deleted once it lapses; the device list is kept until you delete your
+            account.
+          </li>
+          <li>
+            <strong>A push token, if you turn on alerts.</strong> A Firebase Cloud Messaging token
+            that lets us send this phone a new-device alert. It is deleted when you turn alerts
+            off or sign out.
+          </li>
+          <li>
             <strong>Standard request logs.</strong> Like any online service, our servers log
             requests, including your IP address, the time and basic app and device information,
             for security, abuse prevention and troubleshooting. These logs are kept for a
@@ -91,12 +116,17 @@ export default function PrivacyPage() {
         <ul>
           <li>
             <strong>Supabase</strong>: database and sign-in (stores the anonymous ID, scan
-            counts, your email address and password hash if you create an account, and request
-            logs).
+            counts, your email address and password hash if you create an account, your monitored
+            network, agent and the devices it reports, push tokens, and request logs).
           </li>
           <li>
             <strong>Resend</strong>: delivers account emails such as confirmation links,
-            password reset codes and a confirmation when you delete your account (receives your email address and the message).
+            password reset codes, the Homelab Agent setup instructions you ask for and a confirmation when you delete your account (receives your email address and the message).
+          </li>
+          <li>
+            <strong>Google Firebase Cloud Messaging</strong>: delivers new-device alerts to your
+            phone (receives the push token). An alert carries only an ID for your network; the App
+            then fetches the details from our servers, so Google does not see your devices.
           </li>
           <li>
             <strong>RevenueCat</strong>: checks subscription purchases with Google Play and keeps
@@ -130,7 +160,8 @@ export default function PrivacyPage() {
           </li>
         </ul>
         <p>
-          This data never leaves your device, and signing in does not upload it. You can delete it with <strong>Account › Clear
+          This data never leaves your device, and signing in does not upload it. Devices found
+          by the Homelab Agent are separate and are described in section 1. You can delete it with <strong>Account › Clear
           device inventory</strong>, and uninstalling the App removes it entirely. Your
           device&rsquo;s own backup service (such as iCloud or Google backup) may include App
           data if you have enabled it; that is governed by Apple&rsquo;s or Google&rsquo;s
@@ -168,13 +199,34 @@ export default function PrivacyPage() {
           App, so no lookup is made over the internet. Apart from this local traffic, the App
           contacts our servers only for the purposes in section 1.
         </p>
-
-        <h2>6. Future optional features</h2>
         <p>
-          We plan optional features such as cloud sync across your devices, the Homelab
-          Agent and intrusion alerts. These will be opt-in. Before any of them launch we will
-          update this policy to describe exactly what is collected, why, and how to delete it.
+          The Homelab Agent, if you install it on a computer on your network, sends the same kinds
+          of discovery traffic (plus ARP requests) on a schedule, and reports what it finds to our
+          servers as described in section 1. It runs on your hardware and you can stop or
+          uninstall it at any time.
         </p>
+
+        <h2>6. Optional features and how to turn them off</h2>
+        <p>
+          Monitoring, cloud sync and alerts are off until you set them up, and need an account
+          and a plan that includes them.
+        </p>
+        <ul>
+          <li>
+            <strong>Alerts:</strong> turn off <strong>New-device alerts</strong> in{" "}
+            <strong>Account › App settings</strong>; the push token is deleted.
+          </li>
+          <li>
+            <strong>Cloud sync:</strong> turn off <strong>Cloud sync</strong> in the same place to
+            stop the App showing the agent&rsquo;s devices. The agent keeps reporting while it is
+            paired.
+          </li>
+          <li>
+            <strong>The Homelab Agent:</strong> revoke it in <strong>Tools › Homelab Agent</strong>,
+            or uninstall it from its computer, to stop new reports. Devices it already reported
+            stay on your account until you delete the account.
+          </li>
+        </ul>
 
         <h2>7. This website</h2>
         <p>
@@ -204,7 +256,8 @@ export default function PrivacyPage() {
           <li>
             <strong>Your account:</strong> tap <strong>Account › App settings › User settings › Delete account</strong> in
             the App. This immediately and permanently deletes the account and everything our
-            server holds for it, including your email address and scan counts. Signing out does
+            server holds for it, including your email address, scan counts, monitored networks,
+            the devices your agent reported and push tokens. Signing out does
             not delete your account. Deleting your account does not cancel a subscription:
             cancel it in Google Play first. Google keeps its own purchase records; email us and we
             will also delete the purchase history RevenueCat holds for your account. Step-by-step instructions are on our{" "}
