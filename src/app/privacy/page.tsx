@@ -20,8 +20,10 @@ export default function PrivacyPage() {
             <strong>The short version:</strong> Everything the app learns about your network
             stays on your device, and you can delete it at any time. You don&rsquo;t need an
             account: the app uses a random anonymous ID only to count scans for the free plan.
-            If you choose to sign in, we also store your email address. There are no
-            analytics, no advertising and no tracking, and we never sell your data.
+            If you choose to sign in, we also store your email address. If you subscribe, Google
+            Play handles the payment and our subscription provider, RevenueCat, records the
+            purchase; we never see your card. There are no analytics, no advertising and no
+            tracking, and we never sell your data.
           </p>
         </div>
 
@@ -56,8 +58,18 @@ export default function PrivacyPage() {
             never share or sell your address.
           </li>
           <li>
-            <strong>Your plan.</strong> Which plan the account is on (for example Free), so the
-            App can apply its limits.
+            <strong>Your plan.</strong> Which plan the account is on (for example Free or
+            Premium) and, if you subscribe, whether the subscription is in a free trial, active,
+            in a billing grace period or expired, and when the current period ends, so the App
+            can apply the right limits.
+          </li>
+          <li>
+            <strong>Purchase records, if you subscribe.</strong> Subscriptions are sold through
+            Google Play (and, later, the App Store), which takes the payment. A subscription
+            needs an account, so it can follow you to a new phone. The store passes us, through
+            RevenueCat, a record of the purchase: the product, price and currency, the purchase,
+            renewal and expiry dates, and the store&rsquo;s transaction identifiers. We never
+            receive your payment card details.
           </li>
           <li>
             <strong>Standard request logs.</strong> Like any online service, our servers log
@@ -85,6 +97,12 @@ export default function PrivacyPage() {
           <li>
             <strong>Resend</strong>: delivers account emails such as confirmation links,
             password reset codes and a confirmation when you delete your account (receives your email address and the message).
+          </li>
+          <li>
+            <strong>RevenueCat</strong>: checks subscription purchases with Google Play and keeps
+            track of their status (receives your account&rsquo;s random ID and the purchase
+            records from the store; no payment card details, and nothing about your network or
+            devices).
           </li>
         </ul>
         <p>
@@ -154,10 +172,8 @@ export default function PrivacyPage() {
         <h2>6. Future optional features</h2>
         <p>
           We plan optional features such as cloud sync across your devices, the Homelab
-          Agent, intrusion alerts and in-app subscriptions. These will be opt-in. Before any of them
-          launch we will update this policy to describe exactly what is collected, why, and
-          how to delete it. Subscription payments, if offered, are processed by Apple or Google;
-          we do not receive your payment card details.
+          Agent and intrusion alerts. These will be opt-in. Before any of them launch we will
+          update this policy to describe exactly what is collected, why, and how to delete it.
         </p>
 
         <h2>7. This website</h2>
@@ -189,7 +205,9 @@ export default function PrivacyPage() {
             <strong>Your account:</strong> tap <strong>Account › App settings › User settings › Delete account</strong> in
             the App. This immediately and permanently deletes the account and everything our
             server holds for it, including your email address and scan counts. Signing out does
-            not delete your account. Step-by-step instructions are on our{" "}
+            not delete your account. Deleting your account does not cancel a subscription:
+            cancel it in Google Play first. Google keeps its own purchase records; email us and we
+            will also delete the purchase history RevenueCat holds for your account. Step-by-step instructions are on our{" "}
             <Link href="/delete-account">Delete your account</Link> page. If you no longer have the
             App, email{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a> from the address on the account and

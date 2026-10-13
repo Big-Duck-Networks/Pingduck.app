@@ -45,7 +45,8 @@ export default function TermsPage() {
 
         <h2>3. Subscriptions and purchases</h2>
         <p>
-          Core features are free. We may offer optional paid subscriptions. If you buy one:
+          Core features are free. PingDuck Premium is an optional paid subscription, billed
+          monthly or yearly. If you buy it:
         </p>
         <ul>
           <li>
@@ -59,7 +60,7 @@ export default function TermsPage() {
           </li>
           <li>
             You can manage or cancel a subscription in your App Store or Google Play account
-            settings. Deleting the App does not cancel it.
+            settings. Deleting the App or your PingDuck account does not cancel it.
           </li>
           <li>
             If a free trial is offered, any unused part of it ends when you purchase a
