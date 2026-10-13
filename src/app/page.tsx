@@ -56,7 +56,7 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-hairline">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-14 pb-16 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:pt-20 lg:pb-24">
           <div>
-            <Chip tone="live">● LIVE · iOS &amp; ANDROID</Chip>
+            <Chip tone="route">COMING SOON · ANDROID FIRST, THEN iOS</Chip>
             <h1 className="font-display mt-6 text-5xl leading-[1.02] font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Who&rsquo;s on
               <br />
