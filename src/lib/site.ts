@@ -17,7 +17,7 @@ export const site = {
   // asset); null shows "coming soon" on /agent.
   agentWindowsUrl: null as string | null,
   agentImage: "ghcr.io/big-duck-networks/pingduck-agent:latest",
-  legalUpdated: "October 7, 2026",
+  legalUpdated: "October 13, 2026",
   year: 2026,
 };
 
