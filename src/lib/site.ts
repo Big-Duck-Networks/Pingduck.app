@@ -10,6 +10,13 @@ export const site = {
   parentCompany: "Webcap Media Group",
   email: "support@pingduck.app",
   jurisdiction: "the State of New York",
+  // Before launch the homepage shows the waitlist form instead of the store
+  // badges. Set to false at launch, with the store URLs below.
+  waitlist: true,
+  // The waitlist calls join_waitlist on Supabase. The publishable key is
+  // meant to be public; it can only run that function.
+  supabaseUrl: "https://rumwtzzyrhzudguolasq.supabase.co",
+  supabasePublishableKey: "sb_publishable_eWbf9jGpxBWQ6t7Vtz8r5A_mWfdmVrK",
   // Store listings; null shows a "coming soon" badge instead of a link.
   appStoreUrl: null as string | null,
   playStoreUrl: null as string | null,
@@ -17,7 +24,7 @@ export const site = {
   // asset); null shows "coming soon" on /agent.
   agentWindowsUrl: null as string | null,
   agentImage: "ghcr.io/big-duck-networks/pingduck-agent:latest",
-  legalUpdated: "October 13, 2026",
+  legalUpdated: "October 18, 2026",
   year: 2026,
 };
 

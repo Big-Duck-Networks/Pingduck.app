@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Phone } from "@/components/phone";
 import { StoreBadges } from "@/components/store-badges";
+import { Waitlist } from "@/components/waitlist";
+import { site } from "@/lib/site";
 
 const methods = [
   { tag: "ICMP", color: "route", text: "Ping sweep of your whole subnet in parallel." },
@@ -68,7 +70,7 @@ export default function Home() {
               properly technical underneath.
             </p>
             <div className="mt-8">
-              <StoreBadges />
+              {site.waitlist ? <Waitlist /> : <StoreBadges />}
             </div>
             <p className="mt-6 text-sm text-ink-muted">
               Free to scan. No sign-up needed. Your device list stays on your phone.
@@ -178,7 +180,7 @@ export default function Home() {
               covers permissions, missing devices and privacy.
             </p>
           </div>
-          <StoreBadges />
+          {site.waitlist ? <Waitlist /> : <StoreBadges />}
         </div>
       </section>
     </>
