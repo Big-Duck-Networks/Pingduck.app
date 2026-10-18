@@ -59,6 +59,12 @@ export default function PrivacyPage() {
             only as a secure hash, so we cannot read it. We do not send marketing email, and we
             never share or sell your address.
           </li>
+          <li id="waitlist">
+            <strong>Your email address, if you join the waitlist.</strong> The form on this
+            website stores the address you enter and the date. We use it only to email you once
+            when PingDuck is available, and delete the list after launch. To be removed sooner,
+            email us.
+          </li>
           <li>
             <strong>Your plan.</strong> Which plan the account is on (for example Free or
             Premium) and, if you subscribe, whether the subscription is in a free trial, active,
@@ -117,7 +123,7 @@ export default function PrivacyPage() {
           <li>
             <strong>Supabase</strong>: database and sign-in (stores the anonymous ID, scan
             counts, your email address and password hash if you create an account, your monitored
-            network, agent and the devices it reports, push tokens, and request logs).
+            network, agent and the devices it reports, push tokens, waitlist email addresses, and request logs).
           </li>
           <li>
             <strong>Resend</strong>: delivers account emails such as confirmation links,
