@@ -14,7 +14,7 @@ export default function DeleteAccountPage() {
     <>
       <PageIntro eyebrow="ACCOUNT" title={`Delete your ${site.name} account`}>
         <p>
-          {site.name} is made by {site.company}, a {site.parentCompany} company. Deleting your account
+          {site.name} is made by {site.company}. Deleting your account
           is permanent and takes effect immediately.
         </p>
       </PageIntro>

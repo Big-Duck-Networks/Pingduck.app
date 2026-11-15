@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/page-intro";
+import { currentWindowsRelease, formatSize } from "@/lib/releases";
 import { site } from "@/lib/site";
 
-// TODO(launch): this page is unlisted until launch. At launch: set
-// site.agentWindowsUrl, drop `robots` below, and link /agent from the nav,
-// footer and FAQ. Tracked in pingduck/docs/ROADMAP.md, Phase 8.
+// TODO(launch): this page is unlisted until launch. At launch: drop `robots`
+// below and link /agent from the nav, footer and FAQ. Tracked in
+// pingduck/docs/ROADMAP.md, Phase 8.
 export const metadata: Metadata = {
   title: "Get PingDuck Agent",
   description: `Install the ${site.name} Agent on a Windows PC, Linux box, Raspberry Pi or NAS to watch your network around the clock.`,
@@ -49,6 +50,44 @@ function Steps({ items }: { items: React.ReactNode[] }) {
   );
 }
 
+/**
+ * The current release's direct GitHub link from Supabase, with its version
+ * and size. Only a release recorded in Supabase enables the button: with
+ * none (nothing released yet, or Supabase unreachable) it's disabled.
+ */
+async function WindowsDownload() {
+  const { ok, release } = await currentWindowsRelease();
+  if (!release) {
+    return (
+      <div className="mt-5">
+        <button
+          type="button"
+          disabled
+          className="font-display inline-flex cursor-not-allowed items-center gap-2 border-2 border-partition bg-surface-2 px-5 py-3 text-sm font-semibold tracking-wide text-ink-muted"
+        >
+          DOWNLOAD FOR WINDOWS
+        </button>
+        <p className="mt-2 text-xs text-ink-muted">
+          {ok ? "Coming soon." : "The download isn’t available right now. Try again in a few minutes."}
+        </p>
+      </div>
+    );
+  }
+  return (
+    <div className="mt-5">
+      <a
+        href={release.url}
+        className="font-display inline-flex items-center gap-2 border-2 border-ink bg-ink px-5 py-3 text-sm font-semibold tracking-wide text-canvas shadow-hard"
+      >
+        DOWNLOAD FOR WINDOWS
+      </a>
+      <p className="mt-2 text-xs text-ink-muted">
+        Version {release.version} · {formatSize(release.size)}
+      </p>
+    </div>
+  );
+}
+
 /** Where the app's "Add monitoring unit" steps send people. Unlisted until launch. */
 export default function AgentPage() {
   return (
@@ -69,18 +108,7 @@ export default function AgentPage() {
             The full {site.name} app on your PC, with the agent built in: it scans your network,
             sits in the tray and keeps monitoring with the window closed. Windows 10 or 11, 64-bit.
           </p>
-          {site.agentWindowsUrl ? (
-            <a
-              href={site.agentWindowsUrl}
-              className="font-display mt-5 inline-flex items-center gap-2 border-2 border-ink bg-ink px-5 py-3 text-sm font-semibold tracking-wide text-canvas shadow-hard"
-            >
-              DOWNLOAD FOR WINDOWS
-            </a>
-          ) : (
-            <span className="font-display mt-5 inline-flex border-2 border-partition bg-surface-2 px-5 py-3 text-sm font-semibold tracking-wide text-ink-muted">
-              WINDOWS DOWNLOAD COMING SOON
-            </span>
-          )}
+          <WindowsDownload />
           <Steps
             items={[
               <>Download and run the installer.</>,

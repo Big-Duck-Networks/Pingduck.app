@@ -95,12 +95,21 @@ Names, contacts and links used across the site live in **`src/lib/site.ts`**:
 
 | Key                            | Used for                                                     |
 | ------------------------------ | ------------------------------------------------------------ |
-| `company` / `parentCompany`    | Legal entity (and owner) on the privacy page, terms, footer  |
+| `company`                      | Legal entity on the privacy page, terms, footer              |
 | `email`                        | Support and legal contact                                    |
 | `url`                          | Canonical URL and Open Graph metadata                        |
 | `jurisdiction`                 | Governing law in the terms                                   |
 | `appStoreUrl` / `playStoreUrl` | Store badges; `null` shows **Coming soon to** instead of a link |
 | `legalUpdated`, `year`         | "Last updated" date and copyright year                       |
+| `windowsReleasePrefix`         | The only download links accepted from Supabase |
+
+### Windows download
+
+The `/agent` button and `/download/windows` take the current Windows release from Supabase
+(`current_app_release('windows')`, in `src/lib/releases.ts`): its direct GitHub link, version and size.
+The pingduck repo's **release windows** workflow records every release there, so the site follows each
+release within a minute or two with no deploy. With no release in Supabase (or Supabase unreachable) the
+button is disabled and `/download/windows` sends people to `/agent`.
 
 > [!IMPORTANT]
 > Dates are fixed strings, not `new Date()`. With `cacheComponents` on, reading the clock during render makes a route dynamic. Bump `legalUpdated` whenever the policy or terms change.
@@ -152,7 +161,7 @@ src/
 
 ## Before launch
 
-- [x] Legal entity: *Big Duck Networks*, owned by Webcap Media Group (`company`, `parentCompany`).
+- [x] Legal entity: *Big Duck Networks* (`company`).
 - [x] Domain `pingduck.app`, support `support@pingduck.app`.
 - [ ] Have counsel review `/privacy` and `/terms`.
 - [x] Privacy Policy covers the anonymous scan-count ID and optional email and password accounts (Supabase, Resend).

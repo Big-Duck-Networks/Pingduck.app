@@ -7,7 +7,6 @@ export const site = {
     "PingDuck finds every device on your Wi-Fi in seconds: names, vendors, latency and open ports. Your device list stays on your phone.",
   url: "https://pingduck.app",
   company: "Big Duck Networks",
-  parentCompany: "Webcap Media Group",
   email: "support@pingduck.app",
   jurisdiction: "the State of New York",
   // Before launch the homepage shows the waitlist form instead of the store
@@ -20,11 +19,14 @@ export const site = {
   // Store listings; null shows a "coming soon" badge instead of a link.
   appStoreUrl: null as string | null,
   playStoreUrl: null as string | null,
-  // PingDuck Agent for Windows (the tray app's installer, a GitHub Releases
-  // asset); null shows "coming soon" on /agent.
-  agentWindowsUrl: null as string | null,
+  // PingDuck for Windows (the desktop app with the agent built in). The
+  // current release's download link comes from Supabase (lib/releases.ts),
+  // where release-windows.yml in the pingduck repo records each release; with
+  // no release there the download is disabled. Only links under this prefix
+  // are accepted from it.
+  windowsReleasePrefix: "https://github.com/Big-Duck-Networks/pingduck/releases/download/",
   agentImage: "ghcr.io/big-duck-networks/pingduck-agent:latest",
-  legalUpdated: "October 18, 2026",
+  legalUpdated: "November 14, 2026",
   year: 2026,
 };
 
